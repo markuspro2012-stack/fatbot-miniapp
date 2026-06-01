@@ -37,4 +37,6 @@ export const api = {
   addWater: (glasses) => request('POST', '/api/water', { glasses }),
   logWeight: (weight_kg) => request('POST', '/api/weight', { weight_kg }),
   getWeightHistory: () => request('GET', '/api/weight/history'),
+  updateProfile: (data) => request('PUT', '/api/profile', data),
+  updateProfilePhoto: (photo) => request('POST', '/api/profile/photo', { photo }),
 }
