@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { createPortal } from 'react-dom'
 import { api } from '../api.js'
 import { colors, card, shadows } from '../theme.js'
 
@@ -336,8 +337,8 @@ export default function Add({ onNavigate }) {
         </>
       )}
 
-      {/* ── PRODUCT FORM (add / edit) ────────────────────────────────────── */}
-      {formMode && (
+      {/* ── PRODUCT FORM (add / edit) — Portal, renders at document.body ── */}
+      {formMode && createPortal(
         <div style={s.overlay} onClick={closeForm}>
           <div style={s.formCard} onClick={e => e.stopPropagation()}>
             <div style={s.formTitle}>{formMode === 'add' ? '+ Новый продукт' : '✏️ Редактировать'}</div>
@@ -373,11 +374,12 @@ export default function Add({ onNavigate }) {
               </button>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
 
-      {/* ── DELETE CONFIRM ───────────────────────────────────────────────── */}
-      {deleteConfirm && (
+      {/* ── DELETE CONFIRM — Portal ──────────────────────────────────────── */}
+      {deleteConfirm && createPortal(
         <div style={s.overlay} onClick={() => setDeleteConfirm(null)}>
           <div style={{ ...s.formCard, maxWidth: 300 }} onClick={e => e.stopPropagation()}>
             <div style={{ fontSize: 36, textAlign:'center', marginBottom: 12 }}>🗑</div>
@@ -392,7 +394,8 @@ export default function Add({ onNavigate }) {
               <button style={{ ...s.saveBtn2, background: colors.danger }} onClick={confirmDelete}>Удалить</button>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   )
