@@ -39,4 +39,8 @@ export const api = {
   getWeightHistory: () => request('GET', '/api/weight/history'),
   updateProfile: (data) => request('PUT', '/api/profile', data),
   updateProfilePhoto: (photo) => request('POST', '/api/profile/photo', { photo }),
+  getUserFoods: (q) => request('GET', `/api/user-foods${q ? `?q=${encodeURIComponent(q)}` : ''}`),
+  createUserFood: (data) => request('POST', '/api/user-foods', data),
+  updateUserFood: (id, data) => request('PUT', `/api/user-foods/${id}`, data),
+  deleteUserFood: (id) => request('DELETE', `/api/user-foods/${id}`),
 }
