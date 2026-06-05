@@ -473,8 +473,8 @@ const s = {
   addFoodBtn: { display:'block', width:'100%', marginTop: 16, padding: 14, borderRadius: 14, border:`1.5px dashed ${colors.accentBorder}`, background:'rgba(124,92,252,0.06)', color: colors.accentSoft, fontSize: 15, fontWeight: 700, cursor:'pointer', fontFamily:'inherit', transition:'all 150ms ease' },
 
   // Form overlay
-  overlay: { position:'fixed', inset: 0, background:'rgba(0,0,0,0.7)', zIndex: 500, display:'flex', alignItems:'flex-end', justifyContent:'center', backdropFilter:'blur(4px)', animation:'fadeIn 200ms ease' },
-  formCard: { width:'100%', maxWidth: 480, background:'#141428', borderRadius:'20px 20px 0 0', padding: 24, paddingBottom: 36, boxShadow:'0 -8px 40px rgba(0,0,0,0.6)', animation:'slideUp 250ms ease', maxHeight:'90vh', overflowY:'auto' },
+  overlay: { position:'fixed', inset: 0, background:'rgba(0,0,0,0.75)', zIndex: 1000, display:'flex', alignItems:'flex-end', justifyContent:'center', backdropFilter:'blur(4px)', animation:'fadeIn 200ms ease' },
+  formCard: { width:'100%', maxWidth: 480, background:'#141428', borderRadius:'20px 20px 0 0', padding: 24, paddingBottom: 'calc(32px + env(safe-area-inset-bottom, 0px))', boxShadow:'0 -8px 40px rgba(0,0,0,0.6)', animation:'slideUp 250ms ease', maxHeight:'88vh', overflowY:'auto' },
   formTitle: { fontSize: 18, fontWeight: 800, color: colors.text, marginBottom: 20 },
   formRow: { display:'flex', gap: 12 },
   formNote: { fontSize: 11, color: colors.textMuted, marginBottom: 8, marginTop: -4 },
