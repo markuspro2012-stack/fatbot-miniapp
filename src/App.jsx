@@ -97,7 +97,7 @@ const s = {
   },
   content: {
     flex: 1, overflowY: 'auto', paddingBottom: 68,
-    position: 'relative', zIndex: 200,
+    position: 'relative', zIndex: 1,
     animation: 'pageIn 280ms cubic-bezier(0.25,0.46,0.45,0.94)',
   },
 }
